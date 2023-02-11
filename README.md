@@ -169,3 +169,10 @@ It is important for the developers, users, and policymakers to consider the pote
 
 
 ## chatGPT的注册
+
+## chatGPT插件安装：
+
+- 使用微软出品的 Edge 浏览器（没有安装需要先下载） 打开 OpenAI ChatGPT 的网页
+- 在 选项 > 应用 > 管理应用 选择：将此站点作为应用安装
+- 为应用命名，并且选择自己喜好选择开机启动和创建快捷方式
+- 在桌面和任务栏中点击图标，打开应用，并且使用即可
