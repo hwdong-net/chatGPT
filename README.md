@@ -180,11 +180,20 @@ It is important for the developers, users, and policymakers to consider the pote
 1. 第一步：翻墙软件开启全局代理，能访问国外网站如：[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login) 
 
 2. 国外手机号码：在国外接码平台是[sms-activate.org](sms-activate.org) 和 [5sim.net](5sim.net) 这两个网站购买虚拟手机号码。
-   - 注册账号后，充值
-   - 选择手机号： 选择哪个地区的号码，比如我选择的是美国地区的，运营商可以选择任意运营商，
-   - 然后选择openai这个产品，因为chatgpt是openai旗下的。
-   ![](https://foofish.net/images/image-20230210091332464.png)
-   - 选择完成后，系统会给你分配一个手机号，将手机号复制后，输入到 openai.com，等待接收验证码。选择完成后，系统会给你分配一个手机号，将手机号复制后，记录下来，以后要输入到 openai.com
+   - 注册账号: 进入 SMS-Activate是在线接受短信的虚拟号码服务 首页，选择右上角【注册(Register)】按钮，在弹出的窗口中继续选择【注册(Register)】按钮：
+   ![](https://image.woshipm.com/wp-files/2023/02/5hQHHRYUfPtDhO188oRP.png)
+   ![](https://sms-activate.org/)
+   
+   注册过程中，会向你邮箱发送一个确认信链接，请点击该链接，确认注册。
+   - 充值： 确认帐号注册成功后，登录平台，不过帐号还需要充值才能使用，可以使用支付宝充值。还是右上角，选择【余额】，然后选择【充值】按钮：
+    ![](https://image.woshipm.com/wp-files/2023/02/zS1UVBGX2Ujaf9BbAwSy.png)
+    在支付页面上，应付金额填入1，充1美元，然后点击【支付】按钮，在弹出的支付宝页面扫码付款。充值完成后，注意看个人页面右上角的余额有没有变化
+   - 购买手机号码： 左上角，选择出租（Rental）
+       - 选择服务-服务搜索里输入"Openai"
+       - 点击出现的openai服务，展开
+       - 可根据价格选择哪个国家的手机号，然后购买即可
+       ![](https://image.woshipm.com/wp-files/2023/02/1M29uDIJ3kTCWZ9gGW7b.jpg)
+       这个过程可能需要多次尝试，才能获得一个手机号。将手机号复制到记事本记录下来，以后要输入到 openai.com
    
 3 chatgpt注册
 
