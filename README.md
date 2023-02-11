@@ -191,7 +191,7 @@ It is important for the developers, users, and policymakers to consider the pote
    - 购买手机号码： 左上角，选择出租（Rental）
        - 选择服务-服务搜索里输入"Openai"
        - 点击出现的openai服务，展开
-       - 可根据价格选择哪个国家的手机号，然后购买即可
+       - 可根据价格选择哪个国家(如马来西亚)的手机号，然后购买即可
        ![](https://image.woshipm.com/wp-files/2023/02/1M29uDIJ3kTCWZ9gGW7b.jpg)
        这个过程可能需要多次尝试，才能获得一个手机号。将手机号复制到记事本记录下来，以后要输入到 openai.com
    
@@ -216,6 +216,7 @@ It is important for the developers, users, and policymakers to consider the pote
    
   
 参考：[ChatGPT保姆级注册教程](https://foofish.net/how-to-registe-chatGPT.html)
+[赶紧收藏｜ChatGPT注册教程（完整指南）](https://www.woshipm.com/pd/5749183.html)
 
 
 
