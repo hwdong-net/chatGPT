@@ -179,7 +179,7 @@ It is important for the developers, users, and policymakers to consider the pote
 
 1. 第一步：翻墙软件开启全局代理，能访问国外网站如：[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login) 
 
-2. 国外手机号码：在国外接码平台是sms-activate.org 和 5sim.net 这两个网站购买虚拟手机号码。
+2. 国外手机号码：在国外接码平台是[sms-activate.org](sms-activate.org) 和 [5sim.net](5sim.net) 这两个网站购买虚拟手机号码。
    - 注册账号后，充值
    - 选择手机号： 选择哪个地区的号码，比如我选择的是美国地区的，运营商可以选择任意运营商，
    - 然后选择openai这个产品，因为chatgpt是openai旗下的。
