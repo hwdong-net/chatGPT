@@ -170,9 +170,49 @@ It is important for the developers, users, and policymakers to consider the pote
 
 ## chatGPT的注册
 
-## chatGPT插件安装：
+**ChatGPT 注册准备**
+```
+翻墙代理（推荐美国或者日本节点）并开启全局代理模式
+邮箱
+国外手机号（可临时购买）：可在国外接码平台是sms-activate.org 和 5sim.net 购买虚拟国外手机号码；或淘宝购买国外手机号码
+```
+
+1. 第一步：翻墙软件开启全局代理，能访问国外网站如：[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login) 
+
+2. 国外手机号码：在国外接码平台是sms-activate.org 和 5sim.net 这两个网站购买虚拟手机号码。
+   - 注册账号后，充值
+   - 选择手机号： 选择哪个地区的号码，比如我选择的是美国地区的，运营商可以选择任意运营商，
+   - 然后选择openai这个产品，因为chatgpt是openai旗下的。
+   - 选择完成后，系统会给你分配一个手机号，将手机号复制后，输入到 openai.com，等待接收验证码。选择完成后，系统会给你分配一个手机号，将手机号复制后，记录下来，以后要输入到 openai.com
+   
+3 chatgpt注册
+
+  3.1 打开chatgpt注册网站: 浏览器能打开[https://chat.openai.com/auth/login](https://chat.openai.com/auth/login) 
+![](https://foofish.net/images/image-20230210004148020.png)
+
+  3.2  点击 Sign up，进行账号注册
+   ![](https://foofish.net/images/image-20230210004333600.png)
+   
+   3.3. 设置邮箱和密码后，会收到一份邮箱验证信息，点击验证链接后，会提示你设置姓名和绑定手机号，如果出现 Not available 信息，说明你的代理有问题，请切换到美国节点。
+
+   3.4. 邮箱验证成功后，会提示你设置姓名，这一步没啥好介绍，按照指示直接操作
+   ![](https://foofish.net/images/image-20230210084017054.png)
+   
+   3.5 绑定手机号: 
+       https://foofish.net/images/image-20230210084305540.png
+
+     - 填入国外接码平台购买的手机号，等待接收验证码。
+     -  在接码平台接收验证码后，拿去openai进行验证可以注册成功。最后就可以开启愉快的聊天了。
+   
+  
+参考：[ChatGPT保姆级注册教程](https://foofish.net/how-to-registe-chatGPT.html)
+
+
+
+## chatGPT作为应用安装（比浏览器延长使用时间）：
 
 - 使用微软出品的 Edge 浏览器（没有安装需要先下载） 打开 OpenAI ChatGPT 的网页
 - 在 选项 > 应用 > 管理应用 选择：将此站点作为应用安装
 - 为应用命名，并且选择自己喜好选择开机启动和创建快捷方式
 - 在桌面和任务栏中点击图标，打开应用，并且使用即可
+- 
