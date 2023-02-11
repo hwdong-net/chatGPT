@@ -22,6 +22,8 @@ OpenAI 是一个人工智能研究实验室，由营利性技术公司 OpenAI LP
 OpenAI is led by several high-profile individuals in the technology industry. Its co-founders include Elon Musk, Sam Altman, Greg Brockman, Ilya Sutskever, and Wojciech Zaremba. Sam Altman is currently the CEO of OpenAI. He is a well-known entrepreneur and investor in the technology industry, with a background in computer science and a strong interest in AI and its potential to benefit humanity. Under his leadership, OpenAI has continued to advance the state of AI research and development, and has established partnerships with numerous companies and institutions to bring AI solutions to a wider audience.
 
 
-Tell me more about Sam Altman
+Tell me more about Sam Altman ( 告诉我更多关于 Sam Altman 的信息 )
+
+Introduce some typical chatGPT applications ( 介绍一些典型的聊天GPT应用 )
 
 ## chatGPT的注册
