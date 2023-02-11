@@ -183,6 +183,7 @@ It is important for the developers, users, and policymakers to consider the pote
    - 注册账号后，充值
    - 选择手机号： 选择哪个地区的号码，比如我选择的是美国地区的，运营商可以选择任意运营商，
    - 然后选择openai这个产品，因为chatgpt是openai旗下的。
+   ![](https://foofish.net/images/image-20230210091332464.png)
    - 选择完成后，系统会给你分配一个手机号，将手机号复制后，输入到 openai.com，等待接收验证码。选择完成后，系统会给你分配一个手机号，将手机号复制后，记录下来，以后要输入到 openai.com
    
 3 chatgpt注册
