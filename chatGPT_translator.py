@@ -5,10 +5,8 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
-def translate_chunk(text, model_,target_language,):
-    
-    wait_time = 60  # seconds
-    
+def translate_chunk(text, model_,target_language,):    
+    wait_time = 5  # seconds    
     if not text:
         return ""
   
