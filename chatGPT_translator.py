@@ -30,15 +30,14 @@ def translate_chunk(text, model_,target_language,):
         
             t_text = (response["choices"][0].get("message").get(
                         "content").encode("utf8").decode())            
-            break 
+            return  t_text
             #return response.choices[0].text.strip()
         
         except Exception as e:
             print(str(e))     
             time.sleep(wait_time)
             continue            
-    return t_text  
-
+ 
 def translate_file(input_file, output_file, model, api_key,target_language):
     openai.api_key = api_key
 
