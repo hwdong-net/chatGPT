@@ -129,12 +129,14 @@ if __name__ == "__main__":
     # translate_file(input_path, output_path, args.model, args.openai_key,args.target_language)
     
     prefix = "trans_"
-    if input_path.is_dir():
+    if os.path.isdir(input_path):   
         # input path is a folder, scan and process all allowed file types
         print("process folder\n")
         translate_folder(input_path,prefix,args.model, args.openai_key,args.target_language)
-    elif input_path.is_file:        
+    elif os.path.isfile(input_path): 
         folder_path, file_name = os.path.split(input_path)          
         trans_file_name = prefix + file_name
         trans_file_path = os.path.join(folder_path, trans_file_name)
         translate_file(input_path,trans_file_path, args.model, args.openai_key,args.target_language)
+    else:
+       print("The input path is neither a file nor a directory.")
