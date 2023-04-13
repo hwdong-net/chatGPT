@@ -7,17 +7,42 @@ drive.mount('/content/drive')
 
 openai.api_key = 'YOUR_API_KEY_HERE'
 
-def translate_chunk(chunk, model):
+
+# Define function to translate text using OpenAI API
+def translate_text(chunk, model):
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt=chunk,
+        prompt=(f"Translate from Chinese to English:\n\n{chunk}\n\nTranslation:"),
         max_tokens=1024,
-        temperature=0.5,
         n=1,
         stop=None,
+        temperature=0.7,
     )
-    return response.choices[0].text
+    return response.choices[0].text.strip()
 
+def translate_file_(input_file, output_file, model):
+  # Read input file and translate text in chunks of up to 1024 characters
+  with open(input_file, "r", encoding="utf-8") as f:
+    with open(output_file, "w", encoding="utf-8") as out_f:
+        chunk = ""
+        for line in f:
+            if len(chunk) + len(line) > 1024:
+                # Translate chunk and write to output file
+                translated_chunk = translate_text(chunk,model)
+                out_f.write(translated_chunk + "\n")
+
+                # Reset chunk
+                chunk = ""
+
+            # Add line to chunk
+            chunk += line.strip()
+
+        # Translate remaining chunk and write to output file
+        if chunk:
+            translated_chunk = translate_text(chunk,model)
+            out_f.write(translated_chunk + "\n")
+            
+            
 def translate_file(input_file, output_file, model):
     # Read in the input file
     with open(input_file, "r", encoding="utf-8") as f:
@@ -67,7 +92,7 @@ if __name__ == "__main__":
     openai.api_key = args.openai_key
 
     # Translate the input file and save the translated text to the output file
-    translate_file(input_path, output_path, args.model) #, args.api_key)
+    translate_file_(input_path, output_path, args.model) #, args.api_key)
     
 
      
