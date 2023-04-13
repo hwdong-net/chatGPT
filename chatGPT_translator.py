@@ -66,4 +66,4 @@ if __name__ == "__main__":
     output_path = '/content/drive/MyDrive/' + args.output_file
 
     # Translate the input file and save the translated text to the output file
-    translate_file(input_path, output_path, args.model, args.api_key)
+    translate_file(input_path, output_path, args.model, args.openai_key)
