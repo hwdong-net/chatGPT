@@ -6,8 +6,8 @@ drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
 def translate_chunk(text, model_,target_language,):
-    request_interval = 1  # seconds
-    max_backoff_time = 60  # seconds
+    
+    wait_time = 60  # seconds
     
     if not text:
         return ""
@@ -34,13 +34,8 @@ def translate_chunk(text, model_,target_language,):
             #return response.choices[0].text.strip()
         
         except Exception as e:
-            print(str(e))
-            # Exponential backoff if rate limit is hit
-            request_interval *= 2
-            if request_interval > max_backoff_time:
-                request_interval = max_backoff_time
-            print(f"Rate limit hit. Sleeping for {request_interval} seconds.")
-            time.sleep(request_interval)
+            print(str(e))     
+            time.sleep(wait_time)
             continue            
     return t_text  
 
