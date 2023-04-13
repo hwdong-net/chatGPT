@@ -1,8 +1,8 @@
 import openai
 import argparse
 
-from google.colab import drive
-drive.mount('/content/drive')
+#from google.colab import drive
+#drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
 def translate_chunk(text, model_,target_language,):     
