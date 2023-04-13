@@ -52,7 +52,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
         lines = f.readlines()
 
     # Define the maximum length of text to be translated at once
-    max_chunk_size = 4096
+    max_chunk_size = 1024
 
     # Initialize variables to keep track of the current chunk and the output text
     current_chunk = ""
