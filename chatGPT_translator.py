@@ -6,12 +6,14 @@ drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
 def translate_chunk(text, model_,target_language,):    
-    wait_time = 5  # seconds    
+    wait_time = 2  # seconds 
+    max_wait_time = 60  # seconds    
     if not text:
         return ""
   
     while True:
         try:
+            time.sleep(wait_time)
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
                             messages=[{
@@ -32,7 +34,10 @@ def translate_chunk(text, model_,target_language,):
             #return response.choices[0].text.strip()
         
         except Exception as e:
-            print(str(e))     
+            print(str(e))    
+            wait_time *= 2
+            if wait_time > max_wait_time:
+                wait_time = max_wait_time
             time.sleep(wait_time)
             continue            
  
