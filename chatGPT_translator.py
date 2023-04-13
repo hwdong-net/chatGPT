@@ -5,18 +5,27 @@ import argparse
 #drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
-def translate_chunk(chunk, model_):
-    response = openai.Completion.create(
-        model=model_,
-        prompt=(f"Translate from Chinese to English:\n\n{chunk}\n\nTranslation:"),
-        max_tokens=1024,
-        n=1,
-        stop=None,
-        temperature=0.7,
+def translate_chunk(text, model_,target_language,):
+    response = openai.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{
+                        'role': 'system',
+                        'content': 'You are a translator assistant.'
+                    }, {
+                        "role":
+                        "user",
+                        "content":
+                        f"Translate the following text into {target_language} in a way that is faithful to the original text. Return only the translation and nothing else:\n{text}",
+                    }],
+                    temperature=0.7,
     )
-    return response.choices[0].text.strip()
+        
+    t_text = (completion["choices"][0].get("message").get(
+                "content").encode("utf8").decode())
+    return t_text    
+    #return response.choices[0].text.strip()
 
-def translate_file(input_file, output_file, model, api_key):
+def translate_file(input_file, output_file, model, api_key,target_language):
     openai.api_key = api_key
 
     # Read in the input file
@@ -38,7 +47,7 @@ def translate_file(input_file, output_file, model, api_key):
         # If the length of the current chunk exceeds the maximum chunk size
         if len(current_chunk) > max_chunk_size:
             # Translate the current chunk and append the translated text to the output text
-            translated_chunk = translate_chunk(current_chunk, model)
+            translated_chunk = translate_chunk(current_chunk, model,target_language)
             output_text += translated_chunk
 
             # Reset the current chunk
@@ -70,4 +79,4 @@ if __name__ == "__main__":
     print("input_path:",input_path)
     print("output_path:",output_path)
     # Translate the input file and save the translated text to the output file
-    translate_file(input_path, output_path, args.model, args.openai_key)
+    translate_file(input_path, output_path, args.model, args.openai_key,"English")
