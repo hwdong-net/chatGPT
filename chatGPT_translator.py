@@ -9,7 +9,7 @@ openai.api_key = 'YOUR_API_KEY_HERE'
 
 
 # Define function to translate text using OpenAI API
-def translate_text(chunk, model):
+def translate_chunk(chunk, model):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=(f"Translate from Chinese to English:\n\n{chunk}\n\nTranslation:"),
@@ -39,7 +39,7 @@ def translate_file_(input_file, output_file, model):
 
         # Translate remaining chunk and write to output file
         if chunk:
-            translated_chunk = translate_text(chunk,model)
+            translated_chunk = translate_chunk(chunk,model)
             out_f.write(translated_chunk + "\n")
             
             
