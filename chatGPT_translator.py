@@ -58,14 +58,16 @@ if __name__ == "__main__":
     parser.add_argument("input_file", help="path to input Markdown file in Google Drive")
     parser.add_argument("output_file", help="path to output translated Markdown file in Google Drive")
     parser.add_argument("--model", default="text-davinci-002", help="name of the OpenAI model to use (default: text-davinci-002)")
+    parser.add_argument("--openai_key", required=True, help="OpenAI API key")
     args = parser.parse_args()
 
     # Get the full path of the input and output files
     input_path = '/content/drive/MyDrive/data/' + args.input_file
     output_path = '/content/drive/MyDrive/data/' + args.output_file
+    openai.api_key = args.openai_key
 
     # Translate the input file and save the translated text to the output file
-    translate_file(input_path, output_path, argsdata/.model)
+    translate_file(input_path, output_path, args.model) #, args.api_key)
     
 
      
