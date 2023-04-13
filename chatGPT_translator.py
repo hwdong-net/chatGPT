@@ -55,7 +55,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
 
     # If there is still text remaining in the current chunk, translate it and append the translated text to the output text
     if current_chunk != "":
-        translated_chunk = translate_chunk(current_chunk, model)
+        translated_chunk = translate_chunk(current_chunk, model,target_language)
         output_text += translated_chunk
 
     # Write the translated text to the output file
