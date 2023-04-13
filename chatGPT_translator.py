@@ -131,6 +131,7 @@ if __name__ == "__main__":
     prefix = "trans_"
     if input_path.is_dir():
         # input path is a folder, scan and process all allowed file types
+        print("process folder\n")
         translate_folder(input_path,prefix,args.model, args.openai_key,args.target_language)
     elif input_path.is_file:        
         folder_path, file_name = os.path.split(input_path)          
