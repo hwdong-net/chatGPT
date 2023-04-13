@@ -6,24 +6,43 @@ import argparse
 
 # Define function to translate text using OpenAI API
 def translate_chunk(text, model_,target_language,):
-    response = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
-                    messages=[{
-                        'role': 'system',
-                        'content': 'You are a translator assistant.'
-                    }, {
-                        "role":
-                        "user",
-                        "content":
-                        f"Translate the following text into {target_language} in a way that is faithful to the original text. Return only the translation and nothing else:\n{text}",
-                    }],
-                    temperature=0.7,
-    )
+    request_interval = 1  # seconds
+    max_backoff_time = 60  # seconds
+    
+    if not text:
+        return ""
+  
+    while True:
+        try:
+            response = openai.ChatCompletion.create(
+                            model="gpt-3.5-turbo",
+                            messages=[{
+                                'role': 'system',
+                                'content': 'You are a translator assistant.'
+                            }, {
+                                "role":
+                                "user",
+                                "content":
+                                f"Translate the following text into {target_language} in a way that is faithful to the original text. Return only the translation and nothing else:\n{text}",
+                            }],
+                            temperature=0.7,
+            )
         
-    t_text = (response["choices"][0].get("message").get(
-                "content").encode("utf8").decode())
-    return t_text    
-    #return response.choices[0].text.strip()
+            t_text = (response["choices"][0].get("message").get(
+                        "content").encode("utf8").decode())            
+            break 
+            #return response.choices[0].text.strip()
+        
+        except Exception as e:
+            print(str(e))
+            # Exponential backoff if rate limit is hit
+            request_interval *= 2
+            if request_interval > max_backoff_time:
+                request_interval = max_backoff_time
+            print(f"Rate limit hit. Sleeping for {request_interval} seconds.")
+            time.sleep(request_interval)
+            continue            
+    return t_text  
 
 def translate_file(input_file, output_file, model, api_key,target_language):
     openai.api_key = api_key
