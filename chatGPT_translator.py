@@ -1,6 +1,7 @@
 import openai
 import argparse
 import time
+import os   # process folder
 
 #from google.colab import drive
 #drive.mount('/content/drive')
@@ -79,6 +80,33 @@ def translate_file(input_file, output_file, model, api_key,target_language):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(output_text)
 
+
+def translate_folder(folder_path, output_file_prefix, model, api_key,target_language):     
+    prefix = output_file_prefix  # 前缀字符串
+
+    # 获取文件夹下所有文件的列表
+    file_list = os.listdir(folder_path)
+
+    # 遍历所有文件
+    for file_name in file_list:
+        # 使用绝对路径构建文件路径
+        file_path = os.path.join(folder_path, file_name)
+
+        # 如果当前路径指向文件而不是文件夹，则进行处理
+        if os.path.isfile(file_path):
+            # 获取文件名和文件夹路径
+            folder_path, old_file_name = os.path.split(file_path)
+
+            # 将前缀字符串和文件名组合成新的文件名
+            new_file_name = prefix + old_file_name
+
+            # 构建新的文件路径
+            trans_file_path = os.path.join(folder_path, new_file_name)
+            
+            # 翻译
+            translate_file(file_path, trans_file_path, model, api_key,target_language):
+            
+        
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="path to input Markdown file in Google Drive")
