@@ -62,10 +62,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Get the full path of the input and output files
-    input_path = '/content/drive/MyDrive/data/' + "input.md"
-    output_path = '/content/drive/MyDrive/data/' + "output.md"
-    #input_path = args.input_file
-    #output_path = args.output_file
+    #input_path = '/content/drive/MyDrive/data/' + "input.md"
+    #output_path = '/content/drive/MyDrive/data/' + "output.md"
+    input_path = args.input_file
+    output_path = args.output_file
 
     print("input_path:",input_path)
     print("output_path:",output_path)
