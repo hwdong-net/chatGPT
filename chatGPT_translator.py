@@ -9,7 +9,7 @@ openai.api_key = 'YOUR_API_KEY_HERE'
 
 def translate_chunk(chunk, model):
     response = openai.Completion.create(
-        engine=model,
+        model="text-davinci-003",
         prompt=chunk,
         max_tokens=1024,
         temperature=0.5,
