@@ -5,9 +5,9 @@ import argparse
 #drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
-def translate_chunk(chunk, model):
+def translate_chunk(chunk, model_):
     response = openai.Completion.create(
-        engine=model,
+        model=model_,
         prompt=(f"Translate from Chinese to English:\n\n{chunk}\n\nTranslation:"),
         max_tokens=1024,
         n=1,
