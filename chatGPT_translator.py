@@ -113,6 +113,7 @@ if __name__ == "__main__":
     parser.add_argument("output_file", help="path to output translated Markdown file in Google Drive")
     parser.add_argument("--model", default="gpt-3.5-turbo", help="name of the OpenAI model to use (default: text-davinci-003)")
     parser.add_argument("--openai_key", required=True, help="OpenAI API key")
+    parser.add_argument("--target_language", required=True, help="OpenAI API key")
     args = parser.parse_args()
 
     # Get the full path of the input and output files
@@ -123,5 +124,16 @@ if __name__ == "__main__":
 
     print("input_path:",input_path)
     print("output_path:",output_path)
+    
     # Translate the input file and save the translated text to the output file
-    translate_file(input_path, output_path, args.model, args.openai_key,"English")
+    # translate_file(input_path, output_path, args.model, args.openai_key,args.target_language)
+    
+    prefix = "trans_"
+    if input_path.is_dir():
+        # input path is a folder, scan and process all allowed file types
+        translate_folder(input_path,prefix,args.model, args.openai_key,args.target_language)
+    elif input_path.is_file:        
+        folder_path, file_name = os.path.split(input_path)          
+        trans_file_name = prefix + file_name
+        trans_file_path = os.path.join(folder_path, trans_file_name)
+        translate_file(input_path,trans_file_path, args.model, args.openai_key,args.target_language)
