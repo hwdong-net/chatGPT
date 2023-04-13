@@ -104,6 +104,7 @@ def translate_folder(folder_path, output_file_prefix, model, api_key,target_lang
             trans_file_path = os.path.join(folder_path, new_file_name)
             
             # 翻译
+            print("translating :",file_path)
             translate_file(file_path, trans_file_path, model, api_key,target_language)
             
         
