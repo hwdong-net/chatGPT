@@ -57,7 +57,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="path to input Markdown file in Google Drive")
     parser.add_argument("output_file", help="path to output translated Markdown file in Google Drive")
-    parser.add_argument("--model", default="text-davinci-002", help="name of the OpenAI model to use (default: text-davinci-002)")
+    parser.add_argument("--model", default="text-davinci-003", help="name of the OpenAI model to use (default: text-davinci-002)")
     parser.add_argument("--openai_key", required=True, help="OpenAI API key")
     args = parser.parse_args()
 
