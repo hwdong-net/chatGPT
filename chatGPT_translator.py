@@ -26,7 +26,7 @@ def limit_request_counts(time_interval=60):
     
 def translate_chunk(text, model_,target_language,):  
     # limit_request_counts()
-    wait_time = 20
+    wait_time = 30
     max_wait_time = 60
     if not text:
         return ""  
