@@ -1,6 +1,8 @@
 #### chatGPT自动生成的翻译程序，十几行代码非常好懂
 
  **可以将文件或文件夹的所有文件翻译为你的目标语言！用chatGPT免费翻译电子书不用愁了**
+ 
+#### 程序的由来
 
 发现网上的中英文翻译程序的开源程序不好用，翻译markdown文件出来的都是乱七八糟的。
 
@@ -12,7 +14,10 @@
 
 ![](2.png)
 
-我建议直接在colab环境下运行，直接[进入colab](https://colab.research.google.com/drive/12PDLQfS0Zo8MyHu6Z8Mjyb7AJjBHWUbk) 去翻译你的中文书（markdown格式）
+#### 程序的使用
+
+
+我建议直接在colab环境下运行，直接[进入colab](https://colab.research.google.com/drive/12PDLQfS0Zo8MyHu6Z8Mjyb7AJjBHWUbk) 去翻译你的中文书（markdown格式）。
 
 #### youtube视频：
 
