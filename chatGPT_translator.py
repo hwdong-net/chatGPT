@@ -63,8 +63,9 @@ def translate_chunk(text, model_,target_language,):
                     wait_time = max_wait_time
                 time.sleep(wait_time)
             else:
-                print("sleep:",e.retry_after)
-                time.sleep(e.retry_after)            
+                wait_time  = e.cooldown
+                print("sleep:",wait_time)
+                time.sleep(wait_time)            
             continue            
  
 def translate_file(input_file, output_file, model, api_key,target_language):
