@@ -26,12 +26,12 @@ def limit_request_counts(time_interval=60):
     
 def translate_chunk(text, model_,target_language,):  
     limit_request_counts()
-    
+    wait_time = 2
+    max_wait_time = 60
     if not text:
         return ""  
     while True:
-        try:
-            time.sleep(wait_time)
+        try:           
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
                             messages=[{
@@ -72,9 +72,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
 
     # Initialize variables to keep track of the current chunk and the output text
     current_chunk = ""
-    output_text = ""
-
-   
+    output_text = ""  
     
     
     # Iterate through the lines in the input file
