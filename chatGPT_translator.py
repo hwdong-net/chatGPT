@@ -25,13 +25,13 @@ def limit_request_counts(time_interval=60):
    
     
 def translate_chunk(text, model_,target_language,):  
-    # limit_request_counts()
-    wait_time = 60
+    #limit_request_counts()
+    wait_time = 20
     max_wait_time = 300
     if not text:
         return ""  
     while True:
-        try:           
+        try: 
             time.sleep(wait_time)
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
@@ -57,10 +57,10 @@ def translate_chunk(text, model_,target_language,):
         
         except Exception as e:
             print("Exception:"+str(e))   
-            if 0:
+            if 1:
                 wait_time *= 2
-                if wait_time > max_wait_time:
-                    wait_time = max_wait_time
+                #if wait_time > max_wait_time:
+                #   wait_time = max_wait_time
                 time.sleep(wait_time)
             else:
                 wait_time  = e.cooldown
