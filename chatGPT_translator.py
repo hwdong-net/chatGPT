@@ -11,11 +11,12 @@ request_counts_per_minute = 3
 last_request_time = 0
 request_counts = 0
 
-def limit_request_counts(time_interval=60)：
+def limit_request_counts(time_interval=60):
+    global request_counts, last_request_time
     if request_counts == 0:
         last_request_time = time.monotonic() 
     request_counts += 1    
-    if request_counts==3:
+    if request_counts==request_counts_per_minute:
         elapsed_time = time.monotonic() - last_request_time
         if elapsed_time < time_interval:
              time.sleep(time_interval - elapsed_time)        
