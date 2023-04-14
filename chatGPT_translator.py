@@ -44,6 +44,7 @@ def translate_chunk(text, model_,target_language,):
             continue            
  
 def translate_file(input_file, output_file, model, api_key,target_language):
+    print("translating :",input_file)
     openai.api_key = api_key
 
     # Read in the input file
@@ -105,15 +106,14 @@ def translate_folder(folder_path, output_file_prefix, model, api_key,target_lang
             # 构建新的文件路径
             trans_file_path = os.path.join(folder_path, new_file_name)
             
-            # 翻译
-            print("translating :",file_path)
+            # 翻译            
             translate_file(file_path, trans_file_path, model, api_key,target_language)
             
         
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="path to input Markdown file in Google Drive")
-    parser.add_argument("output_file", help="path to output translated Markdown file in Google Drive")
+   # parser.add_argument("output_file", help="path to output translated Markdown file in Google Drive")
     parser.add_argument("--model", default="gpt-3.5-turbo", help="name of the OpenAI model to use (default: text-davinci-003)")
     parser.add_argument("--openai_key", required=True, help="OpenAI API key")
     parser.add_argument("--target_language", required=True, help="OpenAI API key")
@@ -123,10 +123,7 @@ if __name__ == "__main__":
     #input_path = '/content/drive/MyDrive/data/' + "input.md"
     #output_path = '/content/drive/MyDrive/data/' + "output.md"
     input_path = args.input_file
-    output_path = args.output_file
-
-    print("input_path:",input_path)
-    print("output_path:",output_path)
+    #output_path = args.output_file     
     
     # Translate the input file and save the translated text to the output file
     # translate_file(input_path, output_path, args.model, args.openai_key,args.target_language)
