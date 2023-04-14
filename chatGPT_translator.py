@@ -46,8 +46,9 @@ def translate_chunk(text, model_,target_language,):
                             temperature=0.7,
             )
         
-            #t_text = (response["choices"][0].get("message").get("content").encode("utf8").decode())    
-            t_text = response["choices"][0].get("text")
+            #t_text = (response["choices"][0].get("message").get("content").encode("utf8").decode())  
+            t_text = (response["choices"][0].get("message").get("content"))
+            #t_text = response["choices"][0].get("text")
             return  t_text
             #return response.choices[0].text.strip()
         
