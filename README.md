@@ -27,3 +27,5 @@
 ### 申请openai api key
 
  发现了这个文章[国内开通Chat GPT Plus保姆级教程](https://chatgpt-plus.github.io/chatgpt-plus/)，不知道是否有用？
+ 
+ 2. 欧易用手机号注册、然后实名认证（姓名和身份证号）、然后购买USDT币。注意在这个网址（[https://www.okx.com/cn](https://www.okx.com/cn)）上而不是APP上
