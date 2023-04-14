@@ -52,25 +52,24 @@ def translate_file(input_file, output_file, model, api_key,target_language):
         lines = f.readlines()
 
     # Define the maximum length of text to be translated at once
-    max_chunk_size = 1024
+    max_chunk_size = 2000 # The limit of words in a request is set to 2048 tokens (words or symbols).
 
     # Initialize variables to keep track of the current chunk and the output text
     current_chunk = ""
     output_text = ""
 
     # Iterate through the lines in the input file
-    for line in lines:
-        # Add the current line to the current chunk
-        current_chunk += line
-
-        # If the length of the current chunk exceeds the maximum chunk size
-        if len(current_chunk) > max_chunk_size:
+    for line in lines:        
+        if len(current_chunk)+len(line)>=max_chunk_size:
             # Translate the current chunk and append the translated text to the output text
             translated_chunk = translate_chunk(current_chunk, model,target_language)
             output_text += translated_chunk
-
-            # Reset the current chunk
-            current_chunk = ""
+            
+             # Reset the current chunk
+            current_chunk = line
+         else:
+            # Add the current line to the current chunk
+            current_chunk += line
 
     # If there is still text remaining in the current chunk, translate it and append the translated text to the output text
     if current_chunk != "":
