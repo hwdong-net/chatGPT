@@ -84,7 +84,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
             
              # Reset the current chunk
             current_chunk = line
-         else:
+        else:
             # Add the current line to the current chunk
             current_chunk += line
 
