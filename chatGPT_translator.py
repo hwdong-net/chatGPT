@@ -75,7 +75,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
         lines = f.readlines()
 
     # Define the maximum length of text to be translated at once
-    max_chunk_size = 2000 # The limit of words in a request is set to 2048 tokens (words or symbols).
+    max_chunk_size = 1000 # The limit of words in a request is set to 2048 tokens (words or symbols).
 
     # Initialize variables to keep track of the current chunk and the output text
     current_chunk = ""
