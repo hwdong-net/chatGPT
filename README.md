@@ -1,3 +1,7 @@
+#### youtube视频：
+
+[有创业公司用chatGPT作中英文翻译业务割韭菜，赚了几百万，我用chatGPT写了一个基于chatGPT的中英文电子书的翻译程序，只有十几行代码，非常简单，你也可以开翻译公司了](https://www.youtube.com/watch?v=D3Vo6vU4MLw)
+
 发现网上的中英文翻译程序的开源程序不好用，翻译markdown文件出来的都是乱七八糟的。
 
 ![](0.jpg)
