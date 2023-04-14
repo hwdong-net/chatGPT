@@ -36,7 +36,7 @@ def translate_chunk(text, model_,target_language,):
             #return response.choices[0].text.strip()
         
         except Exception as e:
-            print(str(e))    
+            print("Exception:"+str(e))    
             wait_time *= 2
             if wait_time > max_wait_time:
                 wait_time = max_wait_time
