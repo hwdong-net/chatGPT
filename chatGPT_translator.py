@@ -23,7 +23,7 @@ def limit_request_counts(time_interval=60):
         last_request_time = time.monotonic()
         request_counts = 1
    
-    
+#https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions    
 def translate_chunk(text, model_,target_language,):  
     #limit_request_counts()
     wait_time = 20
