@@ -19,6 +19,6 @@
 
 我建议直接在colab环境下运行，直接[进入colab](https://colab.research.google.com/drive/12PDLQfS0Zo8MyHu6Z8Mjyb7AJjBHWUbk) 去翻译你的中文书（markdown格式）。
 
-#### youtube视频：
+#### 程序代码的解释视频：
 
 [有创业公司用chatGPT作中英文翻译业务割韭菜，赚了几百万，我用chatGPT写了一个基于chatGPT的中英文电子书的翻译程序，只有十几行代码，非常简单，你也可以开翻译公司了](https://www.youtube.com/watch?v=D3Vo6vU4MLw)
