@@ -29,4 +29,4 @@
  发现了这个文章[国内开通Chat GPT Plus保姆级教程](https://chatgpt-plus.github.io/chatgpt-plus/)，不知道是否有用？
  
  2. 欧易用手机号注册、然后实名认证（姓名和身份证号）、然后购买USDT币。注意在这个网址（[https://www.okx.com/cn](https://www.okx.com/cn)）上而不是APP上
- 3. 用手机号或邮箱注册 [Depay](https://depay.depay.one/web-app/register-h5?invitCode=920750&lang=zh-cn)
+ 3. 用手机号或邮箱注册 [Depay](https://depay.depay.one/web-app/register-h5?invitCode=920750&lang=zh-cn)。注册成功后，提示你下载APP，下载后安装到你手机里。在APP的右上角开通卡，选10USDT开卡费(一次性)（据说不要KYC认证）
