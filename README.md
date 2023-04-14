@@ -17,7 +17,7 @@
 #### 程序的使用
 
 
-我建议直接在colab环境下运行，直接[进入colab](https://colab.research.google.com/drive/12PDLQfS0Zo8MyHu6Z8Mjyb7AJjBHWUbk) 去翻译你的中文书（markdown格式）。
+我建议直接在colab环境下运行，直接[进入colab](https://colab.research.google.com/drive/12PDLQfS0Zo8MyHu6Z8Mjyb7AJjBHWUbk) 去翻译你的电子书（markdown格式、文本格式），无论你原来的电子书是什么语言，无论你要翻译成什么语言。当然支持word和pdf也很容易的
 
 #### 程序代码的解释视频：
 
