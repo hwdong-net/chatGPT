@@ -81,7 +81,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
         f.write(output_text)
 
 
-def translate_folder(folder_path, output_file_prefix, model, api_key,target_language):     
+def translate_folder(folder_path, output_file_prefix, model, api_key,target_language,allowed_extensions):     
     prefix = output_file_prefix  # 前缀字符串
 
     # 获取文件夹下所有文件的列表
@@ -90,6 +90,8 @@ def translate_folder(folder_path, output_file_prefix, model, api_key,target_lang
     # 遍历所有文件
     for file_name in file_list:
         # 使用绝对路径构建文件路径
+        if os.path.splitext(file_name)[1] not in allowed_extensions:
+             continue
         file_path = os.path.join(folder_path, file_name)
 
         # 如果当前路径指向文件而不是文件夹，则进行处理
@@ -130,10 +132,11 @@ if __name__ == "__main__":
     # translate_file(input_path, output_path, args.model, args.openai_key,args.target_language)
     
     prefix = "trans_"
+    allowed_extensions = [".md", ".txt"]
     if os.path.isdir(input_path):   
         # input path is a folder, scan and process all allowed file types
         print("process folder\n")
-        translate_folder(input_path,prefix,args.model, args.openai_key,args.target_language)
+        translate_folder(input_path,prefix,args.model, args.openai_key,args.target_language,allowed_extensions)
     elif os.path.isfile(input_path): 
         folder_path, file_name = os.path.split(input_path)          
         trans_file_name = prefix + file_name
