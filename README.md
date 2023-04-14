@@ -31,4 +31,4 @@
  2. 欧易用手机号注册、然后实名认证（姓名和身份证号）、然后购买USDT币。注意在这个网址（[欧易注册](https://okx.com/join/40839117))上而不是APP上
 
 
- 3. 用手机号或邮箱注册 [Depay](https://depay.depay.one/web-app/register-h5?invitCode=920750&lang=zh-cn)。注册成功后，提示你下载APP，下载后安装到你手机里。在APP点“申请卡”，选10USDT开卡费（免KYC认证，可升级为高级卡）
+ 3. 用手机号或邮箱注册 [Depay](https://depay.depay.one/web-app/register-h5?invitCode=179818&lang=zh-cn)。注册成功后，提示你下载APP，下载后安装到你手机里。在APP点“申请卡”，选10USDT开卡费（免KYC认证，可升级为高级卡）
