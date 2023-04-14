@@ -7,9 +7,24 @@ import os   # process folder
 #drive.mount('/content/drive')
 
 # Define function to translate text using OpenAI API
-def translate_chunk(text, model_,target_language,):     
-    wait_time = 2  # seconds 
-    max_wait_time = 60  # seconds    
+request_counts_per_minute = 3
+last_request_time = 0
+request_counts = 0
+
+def limit_request_counts(time_interval=60)：
+    if request_counts == 0:
+        last_request_time = time.monotonic() 
+    request_counts += 1    
+    if request_counts==3:
+        elapsed_time = time.monotonic() - last_request_time
+        if elapsed_time < time_interval:
+             time.sleep(time_interval - elapsed_time)        
+        last_request_time = time.monotonic()
+        request_counts = 1
+   
+    
+def translate_chunk(text, model_,target_language,):  
+    limit_request_counts()
     
     if not text:
         return ""  
@@ -58,6 +73,9 @@ def translate_file(input_file, output_file, model, api_key,target_language):
     current_chunk = ""
     output_text = ""
 
+   
+    
+    
     # Iterate through the lines in the input file
     for line in lines:        
         if len(current_chunk)+len(line)>=max_chunk_size:
