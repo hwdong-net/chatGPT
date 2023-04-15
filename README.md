@@ -32,5 +32,5 @@
  2. 用手机号或邮箱注册 [Depay](https://depay.depay.one/web-app/register-h5?invitCode=179818&lang=zh-cn)。注册成功后，提示你下载APP，下载后安装到你手机里。在APP点“申请卡”，选10USDT开卡费（免KYC认证，可升级为高级卡）。
 选择充币-USDT-TRC20 网络，得到网络的充值网址。然后回到欧易，采用提现的方式将欧易上的USDT转移到这个Depay网址。
 
- 3. 有了虚拟信用卡 就可以注册chatGPT或购买opanai api key
+ 3. 有了虚拟信用卡 就可以注册chatGPT或购买opanai api key。这个过程很简单，就填写你的Depay信用卡的信息作为付款的信用卡即可。
 
