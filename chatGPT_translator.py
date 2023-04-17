@@ -82,12 +82,12 @@ def translate_file(input_file, output_file, model, api_key,target_language):
             for line in f:                
                 if len(current_chunk)+len(line)>=max_chunk_size:          
                      translated_chunk = translate_chunk(current_chunk, model,target_language)                     
-                     out_file.write(translated_chunk)
-                     current_chunk = line
+                     out_file.write(translated_chunk)                     
                      if debug:
                         print(repr(current_chunk))      #debug
                         print("\n===================================翻译的结果：\n")
                         print(repr(translated_chunk))      #debug
+                     current_chunk = line
                 else:
                       # Add the current line to the current chunk
                      current_chunk += line  
