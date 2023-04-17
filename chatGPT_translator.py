@@ -34,13 +34,15 @@ def translate_chunk(text, model_,target_language):
         try: 
             time.sleep(wait_time)
             prompt = f""" I want you translate the text I give you into {target_language} in a way that is faithful to the original text. 
-            But do not translate mathematical symbols and formulas such as latex or mathJax formulas. """
-            prompt += r"""For example,the following text is a mathjax formulas:
+            For mathematical symbols and formulas such as latex or mathJax formulas,the translation should be same as the the original text. 
+             """
+            prompt += r"""For example,the translation of the text
+            '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' should be 
             '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n'.
-            For mathematical symbols and formulas,the translation should be same as the the original text. Note: you must not include any explanation to the translation, 
-            Just return only the translation and nothing else.
+            the translation of the text '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n' should be '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n'.
+            Note: you must not include any explanation to the translation, just return only the translation and nothing else.
             """
-            prompt += f"Following it the text to be translated: \n{text}"
+            prompt += f"Following is the text to be translated: \n{text}"
             
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
