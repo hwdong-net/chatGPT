@@ -87,8 +87,8 @@ def translate_file(input_file, output_file, model, api_key,target_language):
                      translated_chunk = translate_chunk(current_chunk, model,target_language)                     
                      out_file.write(translated_chunk)                     
                      if debug:
-                        print(repr(current_chunk))      #debug
-                        print("\n===================================翻译的结果：\n")
+                        print("\n"+repr(current_chunk))      #debug
+                        print("===================================翻译的结果：")
                         print(repr(translated_chunk))      #debug
                      current_chunk = line
                 else:
