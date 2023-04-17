@@ -67,8 +67,38 @@ def translate_chunk(text, model_,target_language,):
                 time.sleep(wait_time)
                      
             continue            
- 
-def translate_file(input_file, output_file, model, api_key,target_language):
+
+def translate_file_(input_file, output_file, model, api_key,target_language):
+    print("translating :",input_file)
+    openai.api_key = api_key
+
+    max_chunk_size = 1000 # The limit of words in a request is set to 2048 tokens (words or symbols).  
+    current_chunk = ""
+    output_text = ""  
+    debug = 1
+    
+    with open(output_file, "w", encoding="utf-8") as out_file:   # with open(output_file, , 'w') as out_file:
+        with open(input_file, "r", encoding="utf-8") as f:     # with open(input_file) as in_file:
+
+            for line in f:
+                if debug:
+                   print(repr(line))      #debug
+                if len(current_chunk)+len(line)>=max_chunk_size:          
+                     translated_chunk = translate_chunk(current_chunk, model,target_language)                     
+                     out_file.write(translated_chunk)
+                     current_chunk = line
+                     if debug:
+                        print(repr(translated_chunk))      #debug
+                else:
+                      # Add the current line to the current chunk
+                     current_chunk += line  
+
+            if current_chunk != "":
+                 translated_chunk = translate_chunk(current_chunk, model,target_language)               
+                 out_file.write(translated_chunk)
+         
+            
+def translate_file_(input_file, output_file, model, api_key,target_language):
     print("translating :",input_file)
     openai.api_key = api_key
 
