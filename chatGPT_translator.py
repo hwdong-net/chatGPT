@@ -80,14 +80,13 @@ def translate_file(input_file, output_file, model, api_key,target_language):
     with open(output_file, "w", encoding="utf-8") as out_file:   # with open(output_file, , 'w') as out_file:
         with open(input_file, "r", encoding="utf-8") as f:     # with open(input_file) as in_file:
 
-            for line in f:
-                if debug:
-                   print(repr(line))      #debug
+            for line in f:                
                 if len(current_chunk)+len(line)>=max_chunk_size:          
                      translated_chunk = translate_chunk(current_chunk, model,target_language)                     
                      out_file.write(translated_chunk)
                      current_chunk = line
                      if debug:
+                        print(repr(current_chunk))      #debug
                         print(repr(translated_chunk))      #debug
                 else:
                       # Add the current line to the current chunk
