@@ -39,8 +39,8 @@ def translate_chunk(text, model_,target_language):
             prompt += r"""For example,the translation of the text
             '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' should be 
             '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n'.
-            the translation of the text '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n' should be '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n'.
-            Note: you must not include any explanation to the translation, just return only the translation and nothing else.
+            Another example,the translation of the text '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n' should be '\n$$f^{(i)} =\\sigma(z^{(i)})$$\n\n'.
+            Note: you must not add any explanation to the translation, just return only the translation and nothing else.
             """
             prompt += f"Following is the text to be translated: \n{text}"
             
