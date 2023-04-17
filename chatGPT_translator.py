@@ -34,7 +34,7 @@ def translate_chunk(text, model_,target_language,):
         try: 
             time.sleep(wait_time)
             prompt = f"Translate the following text into {target_language} in a way that is faithful to the original text."
-            prompt+= "Newline symbols, mathematical formula symbols, parentheses, and special symbols in the original text, such as '\n', '$', '{', '}', '(', ')' should not be translated and remain intact in the translated text."
+            prompt+= "Do not translate mathematical formulas, such as Latex formulas that contain '$' or '=', the newline symbol '\n' should not be deleted in the translated text."
             prompt+= f"Return only the translation and nothing else:\n{text}"
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
