@@ -35,7 +35,7 @@ def translate_chunk(text, model_,target_language):
             time.sleep(wait_time)
             prompt = f""" I want you translate the text I give you  into {target_language} in a way that is faithful to the original text. 
 But do not translate mathematical symbols and formulas such as latex or mathJax formulas. """
-            prompt += r"For example,the following text is a mathjax formulas:'$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' ,"""
+            #prompt += r"For example,the following text is a mathjax formulas:'$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' ,"""
             prompt += f"Return only the translation and nothing else:\n{text}"
             
             response = openai.ChatCompletion.create(
