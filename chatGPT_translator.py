@@ -24,7 +24,7 @@ def limit_request_counts(time_interval=60):
         request_counts = 1
    
 #https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/chatgpt?pivots=programming-language-chat-completions    
-def translate_chunk(text, model_,target_language,):  
+def translate_chunk(text, model_,target_language):  
     #limit_request_counts()
     wait_time = 20
     max_wait_time = 300
@@ -36,6 +36,11 @@ def translate_chunk(text, model_,target_language,):
             prompt = f"Translate the following text into {target_language},"
             prompt+= "do not translate mathematical formulas or equations, such as Latex formulas that contain '$' or '=', these symbols including the newline symbol '\n' should not be deleted in the translated text."
             prompt+= f"Return only the translation and nothing else:\n{text}"
+            
+            prompt = f"I want you to act as an {target_language} translator. I will speak to you in any language and you translate it and answer in the corrected and improved version of my sentence/phrase/word in ${target_language}. I want you to only reply the translated sentence/phrase/word and nothing else, do not write explanations. You do not need to reply a complete sentence."
+            prompt+= "If the text I give you is a mathematical formula, please don't do any translation, just return the text I gave you "
+            prompt+= f"The text or word is:\n {text}"
+            
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
                             messages=[{
