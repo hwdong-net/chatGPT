@@ -39,6 +39,7 @@ def translate_chunk(text, model_,target_language):
             '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n'.
             For mathematical symbols and formulas,the translation should be same as the the original text,you need not do any explanation. 
             If there are special characters such as newline characters '\n', '`' at the beginning or end of the original text, these characters will also be preserved in the translated text.
+            For example, the translation of '\nxxx\n\n' will similar to '\nxxx\n\n', and the characters '\n' at the beginning and end of the text should be reserved.
             """
             prompt += f"Return only the translation and nothing else:\n{text}"
             
