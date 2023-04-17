@@ -37,9 +37,13 @@ def translate_chunk(text, model_,target_language):
             prompt+= "do not translate mathematical formulas or equations, such as Latex formulas that contain '$' or '=', these symbols including the newline symbol '\n' should not be deleted in the translated text."
             prompt+= f"Return only the translation and nothing else:\n{text}"
             
-            prompt = f"I want you to act as an {target_language} translator. I will speak to you in any language and you translate it and answer in the corrected and improved version of my sentence/phrase/word in ${target_language}. I want you to only reply the translated sentence/phrase/word and nothing else, do not write explanations. You do not need to reply a complete sentence."
-            prompt+= "If the text I give you is a mathematical formula, please don't do any translation, just return the text I gave you "
-            prompt+= f"The text or word is:\n {text}"
+            prompt = f"I want you to act as an {target_language} translator. I will speak to you in any language and you translate it and answer in the corrected and improved version of my sentence/phrase/word in ${target_language}."
+           
+            prompt+= """For mathematical symbols and formulas such as latex or mathjax, 
+                       please do not make any translation and interpretation, and return the original text. For example, 
+                       the following is the mathjax formula:
+                       '$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^ {(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$'"""            
+            prompt+= f"The text to be translated is：\n {text}"
             
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
