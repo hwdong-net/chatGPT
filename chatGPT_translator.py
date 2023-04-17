@@ -72,7 +72,7 @@ def translate_file(input_file, output_file, model, api_key,target_language):
     print("translating :",input_file)
     openai.api_key = api_key
 
-    max_chunk_size = 1000 # The limit of words in a request is set to 2048 tokens (words or symbols).  
+    max_chunk_size = 100 # The limit of words in a request is set to 2048 tokens (words or symbols).  
     current_chunk = ""
     output_text = ""  
     debug = 1
