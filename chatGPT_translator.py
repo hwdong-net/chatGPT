@@ -33,17 +33,20 @@ def translate_chunk(text, model_,target_language):
     while True:
         try: 
             time.sleep(wait_time)
-            prompt = f"Translate the following text into {target_language},"
-            prompt+= "do not translate mathematical formulas or equations, such as Latex formulas that contain '$' or '=', these symbols including the newline symbol '\n' should not be deleted in the translated text."
-            prompt+= f"Return only the translation and nothing else:\n{text}"
-            
-            prompt = f"I want you to act as a {target_language} translator.  I will give you a text, if the text is mathematical symbols and formulas such as latex or mathjax formulas, you need do nothing, just return the text I gave you as the translation. Otherwise you will translate it in a corrected and improved version of my sentence/phrase/word in ${target_language}. I want you to only reply the translated text and nothing else, do not write explanations. "
-            prompt += f"Following is the text that needs to be translated:\n {text}"
+            prompt = f""" I want you translate the text I give you  into {target_language} in a way that is faithful to the original text. 
+But do not translate mathematical symbols and formulas such as latex or mathJax formulas. 
+For example,the following text is a mathjax formulas:'$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' ,
+Return only the translation and nothing else:\n{text}
+"""
             
             response = openai.ChatCompletion.create(
                             model="gpt-3.5-turbo",
                             messages=[{
-                                'role': 'system',
+                                'role': 'system',f""" I want you translate the text I give you  into {target_language} in a way that is faithful to the original text. 
+But do not translate mathematical symbols and formulas such as latex or mathJax formulas. 
+For example,the following text is a mathjax formulas:'$$z^{(i)} = \\pmb w \\odot \\pmb x^{(i)}= w_1 * x_1^{(i)}+w_2 * x_2^{(i)} +...+w_K * x_K^{(i)}+w_0 * x_0^{(i)}$$\n' ,
+Return only the translation and nothing else:\n{text}
+"""
                                 'content': 'You are a translator assistant.'
                             }, {
                                 "role":
