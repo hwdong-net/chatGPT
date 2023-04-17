@@ -68,7 +68,7 @@ def translate_chunk(text, model_,target_language,):
                      
             continue            
 
-def translate_file_(input_file, output_file, model, api_key,target_language):
+def translate_file(input_file, output_file, model, api_key,target_language):
     print("translating :",input_file)
     openai.api_key = api_key
 
