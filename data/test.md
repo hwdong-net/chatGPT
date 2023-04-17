@@ -1,7 +1,7 @@
 
 为了更好地看清楚如何求$L(\pmb w)$关于$\pmb w  =(w_0,w_1,\cdots, w_K)^T$的偏导数，引入一些辅助记号$z^{(i)},f^{(i)}$：
 
-$$z^{(i)} = \pmb w \odot \pmb x^{(i)}$$
+$$z^{(i)} = \pmb w \odot \pmb x^{(i)}= w_1 * x_1^{(i)}+w_2*x_2^{(i)} $$
 
 $$z^{(i)} = \pmb w \odot \pmb x^{(i)}= w_1 * x_1^{(i)}+w_2*x_2^{(i)} +...+w_K*x_K^{(i)}+w_0*x_0^{(i)}$$
 
